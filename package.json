@@ -1,0 +1,19 @@
+{
+    "name": "bubliosharev2",
+    "version": "1.0.0",
+    "description": "Sistema de biblioteca",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon app.js"
+    },
+    "keywords": [],
+    "author": "Otoniel López",
+    "license": "MIT",
+    "dependencies": {
+        "dotenv": "^10.0.0",
+        "express": "^4.17.2",
+        "mongodb": "^4.3.0",
+        "nodemon": "^2.0.15"
+    }
+}
