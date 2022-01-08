@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.btn-iujo {
+    background-color: #990000;
+    border-color: #990000;
+}
+.btn-iujo:hover {
+    color: #990000;
+    background-color: transparent;
+    border-color: #990000;
+}
+
+/* colores de texto*/
+.text-iujo {
+    color: #460000;
+}

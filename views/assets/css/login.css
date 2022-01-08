@@ -1,0 +1,13 @@
+body {
+    background: linear-gradient(rgb(0 0 0 / 20%), rgb(0 0 0 / 20%)),
+        url(/assets/images/login-bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#contenedor__general {
+    height: 100vh;
+    position: relative;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}

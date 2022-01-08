@@ -1,4 +1,4 @@
-const con = require("../app");
+// const con = require("../app");
 
 exports.getUsuario = (req, res) => {
     // con.con

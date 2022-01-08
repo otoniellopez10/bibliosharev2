@@ -1,33 +1,18 @@
 const express = require("express");
+const router = express.Router();
+const path = require("path");
 
-//----TABLAS BASICAS------
-const usuario = require("./usuario");
-// const encuesta = require('./encuesta')
-// const encuestado = require('./encuestado')
-// const estructura = require('./estructuraEncuesta')
-// const respuesta = require('./respuesta')
-// const rol = require('./rol')
-// const servicio = require('./servicio')
-// const tipoPregunta = require('./tipoPregunta')
-// const usuario = require('./usuario')
+//sn nada, manda al dashboard
+router.get("/", function (req, res) {
+    res.redirect("/dashboard");
+});
 
-//----app------
-const app = express();
+router.get("/dashboard", function (req, res) {
+    res.render("dashboard");
+});
 
-//---- Rutas Publicas ------
-app.use(
-    "/",
-    //---- Tablas Basicas ----
-    usuario
-    // encuesta,
-    // encuestado,
-    // estructura,
-    // respuesta,
-    // rol,
-    // servicio,
-    // tipoPregunta,
-    // usuario
-);
+router.get("/login", function (req, res) {
+    res.render("login");
+});
 
-//----Exportar Rutas------
-module.exports = app;
+module.exports = router;
