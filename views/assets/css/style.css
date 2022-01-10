@@ -13,8 +13,31 @@
     background-color: transparent;
     border-color: #990000;
 }
+.nav-link.active {
+    background-color: #990000 !important;
+    transition: all ease 0.25s;
+}
+
+.nav-link:hover {
+    background-color: #4444442f;
+}
 
 /* colores de texto*/
 .text-iujo {
     color: #460000;
+}
+
+/* ajustes para todas las paginas */
+#contenedor__general {
+    min-height: 100vh;
+    position: relative;
+}
+
+#contenedor__general #menu {
+    position: fixed;
+    min-height: 100vh;
+}
+
+#contenedor__general #contenedor__contenido {
+    margin-left: 280px;
 }

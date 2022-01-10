@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="e">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- sesiones -->
+        <script src="assets/js/sesiones.js"></script>
+
+        <title></title>
+    </head>
+    <body>
+        <div
+            class="d-flex flex-column flex-shrink-0 p-3 pt-4 text-white bg-dark"
+            style="width: 280px"
+            id="menu"
+        >
+            <a
+                href="/"
+                class="d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+            >
+                <img
+                    src="assets/images/logos/logo-iujo2.png"
+                    alt=""
+                    class="img-fluid"
+                    width="60%"
+                />
+            </a>
+            <hr />
+            <ul class="nav nav-pills flex-column mb-auto pt-3">
+                <li>
+                    <a href="/dashboard" class="nav-link active text-white">
+                        <i class="me-2 bi bi-speedometer2"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="/inventario" class="nav-link text-white">
+                        <i class="me-2 bi bi-clipboard"></i>
+                        Inventario
+                    </a>
+                </li>
+                <li>
+                    <a href="/prestamo" class="nav-link text-white">
+                        <i class="me-2 bi bi-cloud-arrow-up"></i>
+                        Prestamo
+                    </a>
+                </li>
+                <li>
+                    <a href="/devolucion" class="nav-link text-white">
+                        <i class="me-2 bi bi-cloud-arrow-down"></i>
+                        Devolución
+                    </a>
+                </li>
+                <li>
+                    <a href="/reportes" class="nav-link text-white">
+                        <i class="me-2 bi bi-gear"></i>
+                        Reportes
+                    </a>
+                </li>
+            </ul>
+            <hr />
+            <div class="dropdown">
+                <a
+                    href="#"
+                    class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                    id="dropdownUser1"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                >
+                    <i class="bi bi-person-circle fs-4 me-2"></i>
+                    <strong id="sessionUserName">UNDEFINED</strong>
+                </a>
+                <ul
+                    class="dropdown-menu dropdown-menu-dark text-small shadow"
+                    aria-labelledby="dropdownUser1"
+                    style=""
+                >
+                    <!-- <li>
+                        <a class="dropdown-item" href="#">New project...</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">Settings</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">Profile</a>
+                    </li> -->
+                    <!-- <li><hr class="dropdown-divider" /></li> -->
+                    <li>
+                        <a class="dropdown-item btn-logout" href="#"
+                            >Cerrar sesión</a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <script src="assets/jquery/jquery-3.6.0.min.js"></script>
+        <script src="assets/js/admin-menu.js"></script>
+    </body>
+</html>
