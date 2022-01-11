@@ -5,7 +5,7 @@ body {
     background-attachment: fixed;
 }
 
-#contenedor__general {
+#contenedor {
     height: 100vh;
     position: relative;
     -webkit-backdrop-filter: blur(7px);

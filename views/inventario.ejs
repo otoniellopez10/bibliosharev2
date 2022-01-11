@@ -19,15 +19,59 @@
             href="assets/icons-1.7.2/font/bootstrap-icons.css"
         />
         <link rel="stylesheet" href="assets/css/style.css" />
-        <link rel="stylesheet" href="assets/css/.css" />
+        <link rel="stylesheet" href="assets/css/inventario.css" />
 
-        <title></title>
+        <title>Inventario</title>
     </head>
     <body>
         <main id="contenedor__general">
             <div id="contenedor__menu"><%- include('admin-menu'); %></div>
 
-            <div id="contenedor__contenido">inventario</div>
+            <div id="contenedor__contenido" class="p-4 px-5">
+                <div class="titulo_pagina mb-4">
+                    <h5 class="text-secondary">
+                        Inventario
+                        <i class="bi bi-clipboard fs-4 float-end"></i>
+                    </h5>
+                </div>
+
+                <!-- menu entre secciones -->
+                <nav
+                    class="nav nav-pills nav-justified border border-iujo rounded mb-4"
+                >
+                    <a
+                        class="nav-link active rounded-0"
+                        href="#seccion_lista"
+                        aria-expanded="false"
+                        aria-controls="collapseExample"
+                        data-bs-toggle="collapse"
+                        role="button"
+                        >Lista de libros</a
+                    >
+                    <a
+                        class="nav-link rounded-0"
+                        href="#seccion_agregar"
+                        aria-expanded="true"
+                        aria-controls="collapseExample"
+                        data-bs-toggle="collapse"
+                        role="button"
+                        >Lista de libros</a
+                    >
+                </nav>
+
+                <!-- lista de libros (table) -->
+                <section class="collapse" id="seccion_lista">
+                    <div class="card card-body">
+                        Some placeholder content for the collapse component.
+                        This panel is hidden by default but revealed when the
+                        user activates the relevant trigger.
+                    </div>
+                </section>
+
+                <section class="collapse" id="seccion_agregar">
+                    <div class="card card-body">otro texto</div>
+                </section>
+            </div>
         </main>
 
         <!-- Optional JavaScript; choose one of the two! -->

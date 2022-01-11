@@ -27,7 +27,273 @@
         <main id="contenedor__general">
             <div id="contenedor__menu"><%- include('admin-menu'); %></div>
 
-            <div id="contenedor__contenido">Dashboard</div>
+            <div id="contenedor__contenido" class="p-4 px-5">
+                <div class="titulo_pagina mb-4">
+                    <h5 class="text-secondary">
+                        Dashoboard
+                        <i class="bi bi-speedometer2 fs-4 float-end"></i>
+                    </h5>
+                </div>
+                <!-- seccion: cartas informativas -->
+                <div class="container-fluid px-0">
+                    <div class="row">
+                        <!-- counter libros registrados -->
+                        <div class="col-12 col-md-6 col-lg-3 px-3">
+                            <div class="rounded-3 shadow bg-body pt-1">
+                                <div class="row px-3">
+                                    <div class="col-8">
+                                        <p
+                                            id="counter_libros_registrados"
+                                            class="fs-1 fw-bold m-0 text-iujo-2"
+                                        >
+                                            12000
+                                        </p>
+                                        <small class="m-0 ps-1">
+                                            Libros registrados
+                                        </small>
+                                    </div>
+                                    <div
+                                        class="col-4 d-flex justify-content-center align-items-center"
+                                    >
+                                        <i
+                                            class="bi bi-book fs-1 text-black-50"
+                                        ></i>
+                                    </div>
+                                </div>
+                                <a
+                                    href="/inventario"
+                                    class="mt-2 px-4 d-block bg-iujo-2 text-white rounded-bottom"
+                                    >Ver más
+                                    <i
+                                        class="bi bi-arrow-up-right float-end"
+                                    ></i
+                                ></a>
+                            </div>
+                        </div>
+                        <!-- counter libros prestados -->
+                        <div class="col-12 col-md-6 col-lg-3 px-3">
+                            <div class="rounded shadow bg-white pt-1">
+                                <div class="row px-3">
+                                    <div class="col-8">
+                                        <p
+                                            id="contner_libros_prestados"
+                                            class="fs-1 fw-bold m-0 text-iujo-2"
+                                        >
+                                            35
+                                        </p>
+                                        <small class="m-0 ps-1">
+                                            Libros prestados
+                                        </small>
+                                    </div>
+                                    <div
+                                        class="col-4 d-flex justify-content-center align-items-center"
+                                    >
+                                        <i
+                                            class="bi bi-cloud-arrow-up fs-1 text-black-50"
+                                        ></i>
+                                    </div>
+                                </div>
+                                <a
+                                    href="/prestamos"
+                                    class="mt-2 px-4 d-block bg-iujo-2 text-white rounded-bottom"
+                                    >Ver más
+                                    <i
+                                        class="bi bi-arrow-up-right float-end"
+                                    ></i
+                                ></a>
+                            </div>
+                        </div>
+                        <!-- counter libros con retrazo -->
+                        <div class="col-12 col-md-6 col-lg-3 px-3">
+                            <div class="rounded shadow bg-white pt-1">
+                                <div class="row px-3">
+                                    <div class="col-8">
+                                        <p
+                                            id="contner_libros_registrados"
+                                            class="fs-1 fw-bold m-0 text-iujo-2"
+                                        >
+                                            5
+                                        </p>
+                                        <small class="m-0 ps-1">
+                                            Retrazos
+                                        </small>
+                                    </div>
+                                    <div
+                                        class="col-4 d-flex justify-content-center align-items-center"
+                                    >
+                                        <i
+                                            class="bi bi-exclamation-octagon fs-1 text-black-50"
+                                        ></i>
+                                    </div>
+                                </div>
+                                <a
+                                    href="/prestamos"
+                                    class="mt-2 px-4 d-block bg-iujo-2 text-white rounded-bottom"
+                                    >Ver más
+                                    <i
+                                        class="bi bi-arrow-up-right float-end"
+                                    ></i
+                                ></a>
+                            </div>
+                        </div>
+                        <!-- total libros prestados -->
+                        <div class="col-12 col-md-6 col-lg-3 px-3">
+                            <div class="rounded shadow bg-white pt-1">
+                                <div class="row px-3">
+                                    <div class="col-8">
+                                        <p
+                                            id="contner_libros_registrados"
+                                            class="fs-1 fw-bold m-0 text-iujo-2"
+                                        >
+                                            100
+                                        </p>
+                                        <small class="m-0 ps-1">
+                                            Prestamos totales
+                                        </small>
+                                    </div>
+                                    <div
+                                        class="col-4 d-flex justify-content-center align-items-center"
+                                    >
+                                        <i
+                                            class="bi bi-award fs-1 text-black-50"
+                                        ></i>
+                                    </div>
+                                </div>
+                                <a
+                                    href="/prestamos"
+                                    class="mt-2 px-4 d-block bg-iujo-2 text-white rounded-bottom"
+                                    >Ver más
+                                    <i
+                                        class="bi bi-arrow-up-right float-end"
+                                    ></i
+                                ></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- seccion: accesos rapidos -->
+                <section
+                    id="contenedor__operaciones"
+                    class="container-fluid px-0 pb-3 mt-5 bg-white"
+                >
+                    <div class="card shadow-sm rounded-3">
+                        <div class="card-body">
+                            <h5
+                                class="carta--titulo pb-2 border-bottom"
+                                style="color: #555"
+                            >
+                                <i
+                                    class="bi bi-lightning-charge-fill text-iujo-2"
+                                ></i>
+                                Acciones rápidas
+                            </h5>
+                            <div class="row justify-content-around py-3 g-0">
+                                <div
+                                    class="col-12 col-md-3 text-center py-3 shadow-sm"
+                                    style="background: #fcfcfc"
+                                >
+                                    <i
+                                        class="bi bi-book text-iujo-2"
+                                        style="font-size: 3.5rem"
+                                    ></i>
+                                    <button
+                                        class="btn btn-iujo-2 d-block m-auto mt-2"
+                                    >
+                                        Agregar libro
+                                    </button>
+                                </div>
+                                <div
+                                    class="col-12 col-md-3 text-center py-3 shadow-sm"
+                                    style="background: #fcfcfc"
+                                >
+                                    <i
+                                        class="bi bi-cloud-arrow-up text-iujo-2"
+                                        style="font-size: 3.5rem"
+                                    ></i>
+                                    <button
+                                        class="btn btn-iujo-2 d-block m-auto mt-2"
+                                    >
+                                        Realizar prestamo
+                                    </button>
+                                </div>
+                                <div
+                                    class="col-12 col-md-3 text-center py-3 shadow-sm"
+                                    style="background: #fcfcfc"
+                                >
+                                    <i
+                                        class="bi bi-cloud-arrow-down text-iujo-2"
+                                        style="font-size: 3.5rem"
+                                    ></i>
+                                    <button
+                                        class="btn btn-iujo-2 d-block m-auto mt-2"
+                                    >
+                                        Registrar devolución
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section
+                    id="contenedor__historial"
+                    class="mt-5 shadow-sm rounded-3"
+                >
+                    <div class="card">
+                        <div class="card-body">
+                            <h5
+                                class="carta--titulo py-2 border-bottom"
+                                style="color: #555"
+                            >
+                                <i
+                                    class="bi bi-clock-history text-iujo-2 me-1"
+                                ></i>
+                                Historial de operaciones
+                            </h5>
+                        </div>
+
+                        <!-- tabla de hostorial -->
+                        <div class="container">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Operación</th>
+                                        <th scope="col">Responsable</th>
+                                        <th scope="col">Fecha</th>
+                                        <th scope="col">Hora</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Devolucion</td>
+                                        <td>Otto</td>
+                                        <td>21/10/2000</td>
+                                        <td>12:45 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Prestamo</td>
+                                        <td>Thornton</td>
+                                        <td>21/10/2000</td>
+                                        <td>12:45 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Prestamo</td>
+                                        <td>Otoniel Lopez</td>
+                                        <td>21/10/2000</td>
+                                        <td>12:45 PM</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- Fin del contenedor_contenido -->
         </main>
 
         <!-- Optional JavaScript; choose one of the two! -->

@@ -18,11 +18,11 @@ router.get("/login", function (req, res) {
 router.get("/inventario", function (req, res) {
     res.render("inventario");
 });
-router.get("/prestamo", function (req, res) {
-    res.render("prestamo");
+router.get("/prestamos", function (req, res) {
+    res.render("prestamos");
 });
-router.get("/devolucion", function (req, res) {
-    res.render("devolucion");
+router.get("/devoluciones", function (req, res) {
+    res.render("devoluciones");
 });
 router.get("/reportes", function (req, res) {
     res.render("reportes");
