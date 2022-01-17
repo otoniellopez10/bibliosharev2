@@ -6,20 +6,27 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <!-- sesiones -->
-        <script src="assets/js/sesiones.js"></script>
+        <script src="/assets/js/sesiones.js"></script>
 
         <!-- Bootstrap CSS -->
         <link
-            href="assets/bootstrap-5.1.3/css/bootstrap.min.css"
+            href="/assets/bootstrap-5.1.3/css/bootstrap.min.css"
             rel="stylesheet"
         />
         <!-- bootstrao-icons -->
         <link
             rel="stylesheet"
-            href="assets/icons-1.7.2/font/bootstrap-icons.css"
+            href="/assets/icons-1.7.2/font/bootstrap-icons.css"
         />
-        <link rel="stylesheet" href="assets/css/style.css" />
-        <link rel="stylesheet" href="assets/css/inventario.css" />
+        <!-- DataTables -->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="/assets/DataTables/datatables.min.css"
+        />
+
+        <link rel="stylesheet" href="/assets/css/style.css" />
+        <link rel="stylesheet" href="/assets/css/inventario.css" />
 
         <title>Inventario</title>
     </head>
@@ -35,8 +42,283 @@
                     </h5>
                 </div>
 
+                <div class="text-end">
+                    <button class="btn btn-iujo" id="btn_cont_1">
+                        Agregar libro
+                    </button>
+                    <button class="btn btn-iujo" id="btn_cont_2">Lista</button>
+                </div>
+
+                <section id="cont_agregar_libro" class="mt-4">
+                    <div class="card shadow-sm rounded-3">
+                        <div class="card-body">
+                            <h5
+                                class="carta--titulo pb-2 border-bottom"
+                                style="color: #555"
+                            >
+                                <i class="bi bi-journal-plus text-iujo-2"></i>
+                                Agregar libro
+                            </h5>
+
+                            <!-- 
+                                Cota
+                                Título
+                                Autor
+                                Año
+                                Editorial
+                                Especialidad/Carrera
+                                Cantidad de ejemplares
+                             -->
+
+                            <form
+                                class="container"
+                                autocomplete="off"
+                                id="form_agregar-libro"
+                            >
+                                <div class="row">
+                                    <!-- cota -->
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="i_cota" class="form-label"
+                                            >Cota</label
+                                        >
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="i_cota"
+                                            name="i_cota"
+                                        />
+                                    </div>
+                                    <!-- ejemplares -->
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label
+                                            for="i_ejemplares"
+                                            class="form-label"
+                                            >Ejemplares</label
+                                        >
+                                        <input
+                                            type="text"
+                                            class="form-control solo-numeros"
+                                            id="i_ejemplares"
+                                            name="i_ejemplares"
+                                            maxlength="3"
+                                        />
+                                    </div>
+                                    <!-- titulo -->
+                                    <div class="col-12 mb-3">
+                                        <label for="i_titulo" class="form-label"
+                                            >Título</label
+                                        >
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="i_titulo"
+                                            name="i_titulo"
+                                        />
+                                    </div>
+                                    <!-- editorial -->
+                                    <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                        <label
+                                            for="i_editorial"
+                                            class="form-label"
+                                            >Editorial</label
+                                        >
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="i_editorial"
+                                            name="i_editorial"
+                                        />
+                                    </div>
+                                    <!-- especialidad -->
+                                    <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                        <label
+                                            for="i_carrera"
+                                            class="form-label"
+                                            >Carrera / Especialidad</label
+                                        >
+                                        <select
+                                            class="form-select"
+                                            aria-label="Seleciona la carrera"
+                                            id="i_especialidad"
+                                        >
+                                            <option selected>
+                                                Selecciona una especialidad
+                                            </option>
+                                            <option value="Administración">
+                                                Administración
+                                            </option>
+                                            <option value="Contaduría">
+                                                Contaduría
+                                            </option>
+                                            <option value="Informática">
+                                                Informática
+                                            </option>
+                                            <option value="Electrónica">
+                                                Electrónica
+                                            </option>
+                                            <option value="Electrotécnia">
+                                                Electrotécnia
+                                            </option>
+                                            <option value="Mecánica">
+                                                Mecánica
+                                            </option>
+                                            <option
+                                                value="Educación Preescolar"
+                                            >
+                                                Educación Preescolar
+                                            </option>
+                                            <option value="Educación Integral">
+                                                Educación Integral
+                                            </option>
+                                            <option value="Edicación Especial">
+                                                Edicación Especial
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <!-- fecha (año) -->
+                                    <div class="col-md-12 col-lg-4 mb-3">
+                                        <label
+                                            for="i_ano"
+                                            class="form-label solo-numeros"
+                                            >Año</label
+                                        >
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="i_ano"
+                                            name="i_ano"
+                                            maxlength="4"
+                                        />
+                                    </div>
+
+                                    <!-- Autor (es) -->
+                                    <div class="col-8 col-md-10 mb-3">
+                                        <label for="i_autor" class="form-label"
+                                            >Autor(es)</label
+                                        >
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="i_autor"
+                                            name="i_autor"
+                                        />
+                                    </div>
+                                    <!-- btn agregar autor -->
+                                    <div class="col-4 col-md-2 mb-3">
+                                        <label
+                                            for="btn_i_autor"
+                                            class="form-label"
+                                            >&nbsp;</label
+                                        >
+                                        <button
+                                            type="button"
+                                            class="form-control btn btn-iujo"
+                                            id="btn_i_autor"
+                                            name="btn_i_autor"
+                                        >
+                                            <i class="bi bi-plus"></i>
+                                        </button>
+                                    </div>
+                                    <div class="col-12">
+                                        <table
+                                            id="table_autores"
+                                            class="table table-bordered"
+                                            style="width: 100%"
+                                        >
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">
+                                                        Nombre y apellido
+                                                    </th>
+                                                    <th scope="col">
+                                                        Eliminar
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tbody_autores"></tbody>
+                                        </table>
+                                    </div>
+
+                                    <!-- checkbox de confirmacion -->
+                                    <div
+                                        class="col-12 mb-3 ms-2 mt-3 form-check"
+                                    >
+                                        <input
+                                            type="checkbox"
+                                            class="form-check-input"
+                                            id="i_check"
+                                        />
+                                        <label
+                                            class="form-check-label"
+                                            for="i_check"
+                                            >Confirmo que los datos ingresados
+                                            son correctos</label
+                                        >
+                                    </div>
+
+                                    <button
+                                        type="submit"
+                                        class="btn btn-iujo mt-1 disabled"
+                                    >
+                                        Enviar
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="cont_lista_libros" class="mt-3">
+                    <div class="card shadow-sm rounded-3">
+                        <div class="card-body">
+                            <h5
+                                class="carta--titulo pb-2 mb-4 border-bottom"
+                                style="color: #555"
+                            >
+                                <i class="bi bi-clipboard text-iujo-2"></i>
+                                Registro de libros
+                            </h5>
+
+                            <table
+                                id="table_libros"
+                                class="table table-bordered"
+                                style="width: 100%"
+                            >
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Cota</th>
+                                        <th scope="col">Títutlo</th>
+                                        <th scope="col">Autor(es)</th>
+                                        <th scope="col">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- menu entre secciones -->
-                <nav
+                <!-- <nav
                     class="nav nav-pills nav-justified border border-iujo rounded mb-4"
                 >
                     <a
@@ -57,27 +339,20 @@
                         role="button"
                         >Lista de libros</a
                     >
-                </nav>
-
-                <!-- lista de libros (table) -->
-                <section class="collapse" id="seccion_lista">
-                    <div class="card card-body">
-                        Some placeholder content for the collapse component.
-                        This panel is hidden by default but revealed when the
-                        user activates the relevant trigger.
-                    </div>
-                </section>
-
-                <section class="collapse" id="seccion_agregar">
-                    <div class="card card-body">otro texto</div>
-                </section>
+                </nav> -->
             </div>
         </main>
 
         <!-- Optional JavaScript; choose one of the two! -->
-
+        <script src="/assets/jquery/jquery-3.6.0.min.js"></script>
         <!-- Option 1: Bootstrap Bundle with Popper -->
-        <script src="assets/bootstrap-5.1.3/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/.js"></script>
+        <script src="/assets/bootstrap-5.1.3/js/bootstrap.bundle.min.js"></script>
+        <!-- DataTables -->
+        <script
+            type="text/javascript"
+            src="/assets/DataTables/datatables.min.js"
+        ></script>
+        <script src="/assets/sweetalert2/sweetalert2@11.js"></script>
+        <script src="/assets/js/inventario.js"></script>
     </body>
 </html>
